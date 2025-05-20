@@ -94,7 +94,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 ),
                             itemBuilder: (context, index) {
                               final note = filteredNotes[index];
-                              return _buildNoteCard(note);
+                              return _buildNoteCard(note, selectedCategory!);
                             },
                           ),
                 ),
@@ -137,8 +137,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     );
   }
 
-  Widget _buildNoteCard(Note note) {
-    final backgroundColor = Colors.grey.shade300;
+  Widget _buildNoteCard(Note note, Category category) {
+    final backgroundColor = category.color;
 
     return Container(
       decoration: BoxDecoration(

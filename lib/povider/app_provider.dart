@@ -28,7 +28,6 @@ class CategoriesNotifier extends StateNotifier<AsyncValue<List<Category>>> {
   }
 
   Future<void> addCategory(String name, int colorIndex) async {
-    // Prevent duplicate "All"
     if (name.trim().toLowerCase() == 'all') return;
 
     final category = Category.create(name, colorIndex);
